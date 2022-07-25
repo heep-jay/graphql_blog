@@ -21,6 +21,9 @@ const PostDetail = ({ post }) => {
       if (obj.code) {
         modifiedText = (<code className='bg-slate-100 border shadow-sm rounded-sm text-xs' key={index}>{text}</code>);
       }
+      if (obj.anchor) {
+        modifiedText = (<a className='text-red-400' key={index}>{text}</a>);
+      }
     }
 
     switch (type) {

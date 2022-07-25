@@ -1,24 +1,18 @@
 import { NextPage } from 'next'
-import Head from 'next/head'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Image from 'next/image'
-import { Categories,Header, PostCard, PostWidget } from '../components';
+import { Categories,Header, Loader, PostCard, PostWidget } from '../components';
 import FeaturedPosts from '../sections/FeaturedPosts';
 import { getPosts } from '../services/index'
 
 const Home = ({posts}) => {
+  const router = useRouter();
 
-  // console.log(posts)
-  // const posts = [
-  //   {
-  //     title: "Web Development",
-  //     excerpt: "Now, this link among others explains that Vader was played by three performers: Christensen, Dmitrious Bistrevsky, and Tom O’Connell. And, in addition, Vader is voiced by James Earl Jones."
-  //   },
-  //   {
-  //     title: "App Development",
-  //     excerpt: "Now, this link among others explains that Vader was played by three performers: Christensen"
-  //   },
-     
-  //   ]
+  if (router.isFallback) {
+    return <Loader />;
+
+  }
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -60,6 +54,7 @@ export async function getStaticProps() {
   return {
     props: {
       posts
-    }
+    },
+    revalidate: 10,
   }
 }
