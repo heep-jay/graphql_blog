@@ -14,7 +14,7 @@ const Home = ({posts}) => {
 
   }
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="lg:container mx-auto lg:px-10 px-2 mb-8">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />

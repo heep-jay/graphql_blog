@@ -15,11 +15,11 @@ const Header = () => {
   },[])
 
   return (
-    <div className='container mx-auto px-10 mb-8'>
-        <div className='border-b w-full inline-block border-blue-400 py-8'>
+    <div className='lg:container mx-auto lg:px-10 px-4 lg:mb-8 mb-4'>
+        <div className='border-b w-full inline-block border-blue-400 lg:py-8 py-4'>
             <div className="md:float-left block">
                 <Link href="/">
-                    <span className='cursor-pointer text-4xl font-bold text-white'>Djubreal</span>
+                    <span className='cursor-pointer lg:text-4xl text-2xl font-bold text-white'>Djubreal</span>
                 </Link>
             </div>
             <div className="hidden md:float-left  md:contents">

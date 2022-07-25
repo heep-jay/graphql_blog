@@ -21,6 +21,9 @@ const PostDetail = ({ post }) => {
       if (obj.code) {
         modifiedText = (<code className='bg-slate-100 border shadow-sm rounded-sm text-xs' key={index}>{text}</code>);
       }
+      if (obj.pre) {
+        modifiedText = (<pre className='bg-slate-300 border rounded-lg shadow-md text-sm' key={index}>{text}</pre>);
+      }
       if (obj.anchor) {
         modifiedText = (<a className='text-red-400' key={index}>{text}</a>);
       }
@@ -31,6 +34,8 @@ const PostDetail = ({ post }) => {
         return <h2 key={index} className="text-2xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>;
         case 'heading-three':
         return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
+        case 'pre':
+          return <pre key={index}  className='bg-slate-300 border rounded-lg shadow-md text-sm'>{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</pre>;
       case 'paragraph':
         return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
       case 'heading-four':
